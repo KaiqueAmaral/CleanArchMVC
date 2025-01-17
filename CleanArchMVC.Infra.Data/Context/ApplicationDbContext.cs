@@ -1,9 +1,11 @@
 ﻿using CleanArchMVC.Domain.Entities;
+using CleanArchMVC.Infra.Data.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchMVC.Infra.Data.Context;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     //definir opções do contexto
     //registrar o contexto como serviço, informando o provedor e a string de conexão
